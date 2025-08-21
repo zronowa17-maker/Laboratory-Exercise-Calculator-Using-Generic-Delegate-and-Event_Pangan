@@ -13,7 +13,7 @@ namespace CalculatorApplication
             cbOperator.Items.Add("+");
             cbOperator.Items.Add("-");
             cbOperator.Items.Add("*");
-            cbOperat
+            cbOperator.Items.Add("/");
         }
     }
 }
