@@ -127,6 +127,7 @@
             btnEqual.TabIndex = 7;
             btnEqual.Text = "Calculate";
             btnEqual.UseVisualStyleBackColor = false;
+            btnEqual.Click += btnEqual_Click;
             // 
             // FrmCalculator
             // 
