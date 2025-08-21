@@ -30,7 +30,24 @@ namespace CalculatorApplication
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
+            try
+            {
+                double input1 = Convert.ToDouble(txtBoxInput1.Text);
+                double input2 = Convert.ToDouble(txtBoxInput2.Text);
 
+                num1 = input1;
+                num2 = input2;
+
+              
+                double result = cal.GetSum(num1, num2);
+
+                MessageBox.Show($"The result is: {result}");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; 
+            }
         }
     }
 }
