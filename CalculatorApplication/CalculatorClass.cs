@@ -16,5 +16,14 @@ namespace CalculatorApplication
             return str1 + str2;
         }
 
+        public double GetSum(double num1, double num2)
+        {
+            return num1 + num2;
+        }
+
+        public double GetDifference(double num1, double num2)
+        {
+            return num1 - num2;
+        }
+        }
     }
-}
