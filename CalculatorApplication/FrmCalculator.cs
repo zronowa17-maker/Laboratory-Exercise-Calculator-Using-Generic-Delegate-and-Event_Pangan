@@ -38,15 +38,46 @@ namespace CalculatorApplication
                 num1 = input1;
                 num2 = input2;
 
-              
-                double result = cal.GetSum(num1, num2);
+
+                string selectedOperator = cbOperator.SelectedItem.ToString();
+                double result;
+
+                switch (selectedOperator)
+                {
+                    case "+":
+                        result = cal.GetSum(num1, num2);
+                        break;
+                    case "-":
+                        result = cal.GetDifference(num1, num2);
+                        break;
+                    case "*":
+                        result = cal.GetProduct(num1, num2);
+                        break;
+                    case "/":
+                        result = cal.GetQuotient(num1, num2);
+                        break;
+                    default:
+                       
+                        MessageBox.Show("Please select an operator.", "Invalid Operator", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                }
 
                 lblDisplayTotal.Text = result.ToString();
             }
             catch (FormatException)
             {
                 MessageBox.Show("Please enter a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
+                return;
+            }
+            catch (DivideByZeroException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Please select an operator.", "Missing Operator", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
         }
     }
