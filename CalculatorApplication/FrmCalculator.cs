@@ -41,7 +41,7 @@ namespace CalculatorApplication
               
                 double result = cal.GetSum(num1, num2);
 
-                MessageBox.Show($"The result is: {result}");
+                lblDisplayTotal.Text = result.ToString();
             }
             catch (FormatException)
             {
