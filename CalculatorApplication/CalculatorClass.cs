@@ -10,5 +10,11 @@ namespace CalculatorApplication
     {
         public delegate T Information<T>(T arg1, T arg2);
 
+        public Information<string> info;
+        public string Concatenate(string str1, string str2)
+        {
+            return str1 + str2;
+        }
+
     }
 }
