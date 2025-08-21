@@ -25,5 +25,20 @@ namespace CalculatorApplication
         {
             return num1 - num2;
         }
+        private Information<double> calculateEvent;
+
+        public event Information<double> CalculateEvent
+        {
+            add
+            {
+                calculateEvent += value;
+                Console.WriteLine("Delegate added to CalculateEvent.");
+            }
+            remove
+            {
+                calculateEvent -= value;
+                Console.WriteLine("Delegate removed from CalculateEvent.");
+            }
         }
     }
+}
